@@ -1,22 +1,23 @@
-// Paquetes de npm
 import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
 
-// Archivos locales de nuestra App
+// BootstrapVue
+import './plugins/bootstrapVue'
+
+// Vue Font-Awesome
+import './plugins/fontAwesome'
+
+// Custom directives
+// import './directives'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
-// CSS global
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+// Global CSS
 import './assets/css/main.styl'
 
-// Configuración extra
-Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
-// Instancia principal de Vue
 new Vue({
   router,
   store,
@@ -25,9 +26,10 @@ new Vue({
       store.dispatch('oauth/getToken', null, { root: true })
     }
   },
-  // Hook created
   created () {
     this.init()
+    // console.log('process.env:')
+    // console.log(process.env)
   },
   render: h => h(App)
 }).$mount('#app')

@@ -1,8 +1,6 @@
-// Importamos nuestra función que obtiene el token
-// @ alias para /src
+import router from '@/router'
 import * as oauth from '@/api/oauth'
 
-// Creamos el objeto con "Espacio de Nombres"
 export default {
   namespaced: true,
   state: {
@@ -23,7 +21,15 @@ export default {
         })
         .catch((err) => {
           commit('SET_ACCESS_TOKEN', null)
-          console.log('Error OAuth: ', err)
+          const errObj = {
+            message: err.message
+          }
+          if (err.response) {
+            errObj.data = err.response.data
+            errObj.status = err.response.status
+          }
+          commit('error/SET_ERROR', errObj, { root: true })
+          router.push({ name: 'Error' })
         })
         .finally(() => {
           commit('loading/SET_LOADING', false, { root: true })
