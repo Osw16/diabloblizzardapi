@@ -6,10 +6,12 @@
     <b-row>
       <b-col md="12" lg="8" order-lg="2">
         <BaseLoading v-if="isLoadingItems"/>
-
-        <HeroItems />
+        <h1>Here its Items ;)</h1>
+        <HeroItems v-if="items" :items="items"/>
       </b-col>
 
+      <!-- 12 columnas de 'xs' -> 'md', 4 columnas desde 'lg' hacia arriba -->
+      <!-- En 'lg' orden 1 -->
       <b-col md="12" lg="4" order-lg="1">
         <template v-if="hero">
           <HeroAttributes :attributes="detailStats"/>
@@ -32,18 +34,27 @@ import HeroSkills from './HeroSkills/Index'
 export default {
   name: 'HeroView',
   mixins: [setError],
-  components: { BaseLoading, HeroSkills, HeroAttributes, HeroDetailHeader, HeroItems },
+  components: {
+    BaseLoading,
+    HeroAttributes,
+    HeroDetailHeader,
+    HeroItems,
+    HeroSkills
+  },
   data () {
     return {
-      isLoading: false,
+      isLoadingHero: false,
+      isLoadingItems: false,
       hero: null,
       items: null
     }
   },
   computed: {
     detailHeader () {
+      // Asignamos valores a través de
       const {
         name,
+        // valor: alias
         class: classSlug,
         gender,
         level,
@@ -66,6 +77,7 @@ export default {
       }
     },
     detailStats () {
+      // Devuelve el contenido de stats y agrega classSlug
       return { ...this.hero.stats, classSlug: this.hero.class }
     }
   },
@@ -73,7 +85,6 @@ export default {
     this.isLoadingHero = true
     this.isLoadingItems = true
     const { region, battleTag: account, heroId } = this.$route.params
-
     getApiHero({ region, account, heroId })
       .then(({ data }) => {
         this.hero = data
@@ -94,7 +105,6 @@ export default {
       .finally(() => {
         this.isLoadingHero = false
       })
-
     getApiDetailedHeroItems({ region, account, heroId })
       .then(({ data }) => {
         this.items = data
