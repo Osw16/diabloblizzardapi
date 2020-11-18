@@ -2,12 +2,9 @@
 
 ## Example Deploy
 
-```
 See [Example Deploy]
 (https://devilfinder.netlify.app/).
 Maybe off
-
-```
 
 ## Project setup
 ```
