@@ -7,7 +7,7 @@ import './plugins/bootstrapVue'
 import './plugins/fontAwesome'
 
 // Custom directives
-// import './directives'
+import './directives'
 
 import App from './App.vue'
 import router from './router'

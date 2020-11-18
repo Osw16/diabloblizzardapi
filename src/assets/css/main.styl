@@ -130,3 +130,120 @@
   .hero-necromancer,
   .hero-crusader
     height 174px
+
+// ---------------------
+// Acts
+// ---------------------
+
+.act 
+  background-image: url('../img/progress.png')
+  background-size 500%
+
+  &.act1
+   &.pending
+    background-position -1px 0
+
+  &.done
+    background-position -1px 57px
+
+  &.act2
+   &.pending
+    background-position -51px 0
+  
+  &.done
+    background-position -51px -56px
+
+  &.act3
+    &.pending
+      background-position -101px 0px
+
+    &.done
+      background-position -101px -168px
+
+  &.act4
+    &.pending
+      background-position -151px 0px
+
+    &.done
+      background-position -151px -168px
+
+  &.act5
+    &.pending
+      background-position 50px 0
+
+    &.done
+      background-position 50px 57px
+
+// ---------------------
+// Utils
+// ---------------------
+
+.hover-cursor-pointer
+  &:hover
+    cursor pointer
+
+// ---------------------
+// Resources
+// ---------------------
+
+.resource
+  .resource-icon
+    background-image url('../img/resources.png')
+    width 50px
+    height 50px
+
+    &.resource-mana
+      background-position 0 -50px
+
+    &.resource-fury
+      background-position: -50px 0
+
+    &.resource-hatred-discipline
+      background-position: -100px 0
+    
+    &.resource-spirit
+      background-position: -50px -50px
+    
+    &.resource-arcane-power
+      background-position: -100px -50px
+    
+    &.resource-wrath
+      background-position: 0px -100px
+
+    &.resource-essence
+      background-position: -50px -100px
+    
+// ---------------------
+// Active Skills
+// ---------------------
+.active-skills
+  .skills
+    .slot
+      display block
+      width 22px
+      height 22px
+      background url("../img/skill-overlays.png") 0 0
+      position absolute
+      top -5px
+      left 5px
+
+      &.slot-1
+        background-position: 0 -1px
+
+      &.slot-2
+        background-position: -21px -1px
+
+      &.slot-3
+        background-position: 0 -23px
+
+      &.slot-4
+        background-position: -23px -23px
+
+      &.slot-5
+        background-position: 0 -46px
+
+      &.slot-6
+        background-position: -23px -46px
+
+
+
