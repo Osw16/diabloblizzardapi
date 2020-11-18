@@ -6,7 +6,7 @@
     <b-row>
       <b-col md="12" lg="8" order-lg="2">
         <BaseLoading v-if="isLoadingItems"/>
-        <h1>Here its Items ;)</h1>
+
         <HeroItems v-if="items" :items="items"/>
       </b-col>
 

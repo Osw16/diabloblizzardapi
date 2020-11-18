@@ -53,7 +53,7 @@ function getApiHero ({ region, account, heroId }) {
  * @returns {Promise}
  */
 function getApiDetailedHeroItems ({ region, account, heroId }) {
-  const resource = 'd3/profile/{account}/hero/{heroId}/items'
+  const resource = `d3/profile/${account}/hero/${heroId}/items`
   const API_URL = `${protocol}${region}${host}${resource}`
   const locale = locales[region]
 

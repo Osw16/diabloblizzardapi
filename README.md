@@ -4,6 +4,12 @@
 
 See [Example Deploy]
 (https://devilfinder.netlify.app/).
+
+-User: SuperRambo#2613
+
+-Region: EU
+
+
 Maybe off
 
 ## Project setup
