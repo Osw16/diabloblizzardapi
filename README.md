@@ -2,7 +2,7 @@
 
 ## Example Deploy
 
-See [Example Deploy]
+See Example Deploy
 (https://devilfinder.netlify.app/).
 
 -User: SuperRambo#2613
